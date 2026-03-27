@@ -9,7 +9,12 @@ jobs:
       packages: write
       contents: write
       attestations: write
+      actions: read
     steps:
+      - uses: code-cargo/cargowall-action@v1
+        with:
+          mode: 'audit'
+          api-url: 'https://app.dev.codecargo.dev'
 
       - name: Checkout
         uses: actions/checkout@v6
