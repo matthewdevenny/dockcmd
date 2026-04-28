@@ -9,8 +9,11 @@ jobs:
       packages: write
       contents: write
       attestations: write
+      actions: read
     steps:
 
+      - name: CargoWall
+        uses: code-cargo/cargowall-action@v1
       - name: Checkout
         uses: actions/checkout@v6
 
